@@ -1,1 +1,246 @@
-g
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\usepackage{forest}
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+% \providecommand{\abs}[1]{\left\vert#1\right\vert}
+% \providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+% \providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+% %\providecommand{\norm}[1]{\lVert#1\rVert}
+% \providecommand{\mtx}[1]{\mathbf{#1}}
+% \providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 1}
+\author{Yuvateja - EE18BTECH11043}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download all latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/yuvateja-ctrl/EE4013/blob/main/assignment1.tex
+\end{lstlisting}
+\section{Problem}
+(Q 24) Consider the following representation of a number in IEEE-754 single precision floating point format with a bias of 127
+
+S : 1,   E : 10000001 ,  F : 11110000000000000000000
+
+Here S, E and F denote the sign, exponent and fraction components of the floating point representation.
+
+The decimal value corresponding to the representation ( rounded to 2 decimal places ) is 
+
+
+\begin{lstlisting}
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int main()
+{
+    char S[] = "1";
+    char E[] = "10000001";
+    char M[] = "11110000000000000000000";
+
+    int e = sizeof(E)/sizeof(E[0]);
+    int m = sizeof(M)/sizeof(M[0]);
+
+    printf("%d .. %d\n",e,m);
+
+    int exponent = 0;
+    for(int i = 0;i<e-1;i++)
+    {
+        if(E[i] == '1')
+        {
+            exponent = exponent*2 + 1;
+        }
+        else
+        {
+            exponent = exponent*2 + 0;
+        }
+        printf("%d\n",exponent);
+    }
+    
+    double fraction = 0;
+    for(int i = 0;i<m-1;i++)
+    {
+        if(M[i] == '1')
+        {
+            fraction += 1*(pow(2,-i-1));
+        }
+    }
+    int s = (S[0] == '1')?-1:1;
+    printf("%lf\n",fraction);
+    double ans = s*(1+fraction)*(pow(2,exponent-127));
+    printf("The decimal value corresponding to above representation is %lf \n",ans);
+    
+
+    return 0;
+}
+\end{lstlisting}
+The output of the program upon execution is 
+\section{Solution}
+Answer : -7.74
+\newline
+\newline
+\textbf{Explanation}
+\newline
+\newline
+
+In IEEE-754 single precision format a floating point number is represented in 32 bits.
+\newline
+\newline
+1.Sign bit( MSB ) - 1 bit
+\newline
+
+2.biased exponent ( E' ) - 8 bits
+\newline
+
+3.Normalized mantissa ( M ) - 23 bits
+\newline
+
+Sign bit value 0 means positive number, 1 means negative number.
+\newline
+\newline
+The floating point number can be obtained by formula \pm 1.M * 2 ** (E - 127)
+\newline
+\newline
+\nextpage
+
+Given sign bit is 1 , i.e, the number is negative
+\newline
+\newline
+Biased exponent (E')  is  10000001 =  128 + 1 = 129
+\newline
+
+Normalized Mantissa (M) is 11110000000000000000000  =  0.937 
+\newline
+\newline
+
+Therefore the decimal value representation is calculated by above mentioned formula  
+\newline
+\newline
+\pm 1.M * 2 ** (E - 127)  = -1.937 * ( 2 ** ( 129 - 127 )) =  -1.937 * (2**2) = -7.748 = -7.75
+
+( rounded to 2 decimals ) 
+
+  
+\end{document}
+\end{document} 
